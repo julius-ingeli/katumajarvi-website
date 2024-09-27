@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # Adjust to the version you're using
+          python-version: '3.10'  
 
       - name: Install dependencies
         run: |
@@ -30,6 +30,11 @@ jobs:
           --data-binary @app.zip \
           -H "Authorization: Token ${{ secrets.PA_API_TOKEN }}"
           
+      - name: Unzip code on PythonAnywhere
+          run: |
+            curl -X POST https://www.pythonanywhere.com/api/v0/user/${{ secrets.PA_USERNAME }}/consoles/ \
+            -d "command=cd /home/${{ secrets.PA_USERNAME }} && unzip -o app.zip"
+            -H "Authorization: Token ${{ secrets.PA_API_TOKEN }}"
       - name: Reload PythonAnywhere Web App
         run: |
           curl -X POST https://www.pythonanywhere.com/api/v0/user/${{ secrets.PA_USERNAME }}/webapps/https://juliusingeli.pythonanywhere.com//reload/ \
