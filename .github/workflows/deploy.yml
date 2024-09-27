@@ -31,10 +31,10 @@ jobs:
           -H "Authorization: Token ${{ secrets.PA_API_TOKEN }}"
           
       - name: Unzip code on PythonAnywhere
-          run: |
-            curl -X POST https://www.pythonanywhere.com/api/v0/user/${{ secrets.PA_USERNAME }}/consoles/ \
-            -d "command=cd /home/${{ secrets.PA_USERNAME }} && unzip -o app.zip"
-            -H "Authorization: Token ${{ secrets.PA_API_TOKEN }}"
+        run: |
+          curl -X POST https://www.pythonanywhere.com/api/v0/user/${{ secrets.PA_USERNAME }}/consoles/ \
+          -d "command=cd /home/${{ secrets.PA_USERNAME }} && unzip -o app.zip"
+          -H "Authorization: Token ${{ secrets.PA_API_TOKEN }}"
       - name: Reload PythonAnywhere Web App
         run: |
           curl -X POST https://www.pythonanywhere.com/api/v0/user/${{ secrets.PA_USERNAME }}/webapps/https://juliusingeli.pythonanywhere.com//reload/ \
