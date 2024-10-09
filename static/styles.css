@@ -1,0 +1,146 @@
+/* General Styles */
+
+html {
+    background-image: url("/static/media/bg.jpeg");
+    background-size: cover; /* Ensures the background image covers the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;  
+}
+
+header {
+    background-color: #fff4b3;
+    text-align: center;
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: #d3d3d3;
+    padding: 10px;
+}
+
+.header h1 {
+    margin: 0;
+    color: #0173b8;
+}
+
+.banner {
+    background-color: #ffeb3b;
+    padding: 10px;
+    text-align: center;
+}
+
+.banner h2 {
+    margin: 0;
+    color: #007aff;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    float: left;
+    width: 15%;
+    background-color: #cde4ff;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    background-color: #ffed33;
+    padding: 10px;
+    color: #007aff;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Main Content Styles */
+.content {
+    float: left;
+    width: 80%;
+    padding: 20px;
+}
+
+.lake-info {
+    background-color: #e3f2fd;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.nutrient-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.info-card img {
+    max-width: 100%;
+    height: 100px;
+    object-fit: contain;
+}
+
+.info-card h4 {
+    margin: 10px 0;
+    color: #007aff;
+}
+
+button {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+
+.login{
+    justify-content: right;
+}
+
+.corner-logo{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header-spacer{
+    width: 90vw;
+}
