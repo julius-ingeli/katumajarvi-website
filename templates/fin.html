@@ -9,11 +9,10 @@
 <body>
     <header>
         <div class="header">
-            <div class="lang-sel"><a href="{{ url_for('fi') }}"> <img src="static\media\fin.png" alt="Switch to Finnish"></a> </div>
+            <div class="lang-sel"> <a href="{{ url_for('home') }}"><img src="static\media\eng.png" alt="Vaihda englanniksi "> </a> </div>
             <div class="header-spacer">                         </div>
-            <div class="login">Log in</div>
+            <div class="login">Kirjaudu sisään</div>
         </div>
-
 
     </header>
 
@@ -22,18 +21,18 @@
     </div>
 
     <div class="banner">
-        <h2>Here you can find information about Katumajärvi</h2>
+        <h2>Katso mitä kaikkea tietoa löydät Katumajärvestä</h2>
     </div>
 
     <main>
         <div class="sidebar">
             <ul>
-                <li><a href="#">Blue-green algae</a></li>
-                <li><a href="#">Temperature</a></li>
-                <li><a href="#">Water level</a></li>
-                <li><a href="#">Water clarity</a></li>
-                <li><a href="#">Total nitrogen</a></li>
-                <li><a href="#">Total phosphorus</a></li>
+                <li><a href="#">Sinilevä</a></li>
+                <li><a href="#">Lämpötila</a></li>
+                <li><a href="#">Vedenkorkeus</a></li>
+                <li><a href="#">Vedenkirkkaus</a></li>
+                <li><a href="#">Kokonaistyppi</a></li>
+                <li><a href="#">Kokonaisfosfori</a></li>
             </ul>
         </div>
 
@@ -41,66 +40,69 @@
             <section class="lake-info">
                 <h3>Katumajärvi-info</h3>
                 <p>
-                    Here you will find all the up-to-date information about the lake's condition and status. 
-                    We monitor various factors including water temperature, clarity, blue-green algae situation, and water level. 
-                    The information on this site is updated regularly to ensure you always have the latest data about the lake.
+                    Täältä löydät kaikki ajantasaiset tiedot järven kunnosta ja tilasta.
+                    Seuraamme muun muassa veden lämpötilaa, kirkkausastetta, sinilevätilannetta sekä vedenkorkeutta.
+                    Sivuston tiedot päivittyvät säännöllisesti, jotta saat aina tuoreimman tiedon järvestä.
                 </p>
                 <p><strong>Latest update:</strong> {{ts}}</p>
 
                 <div class="info-grid">
-                    
                     <div class="info-card">
                         <img src="static/media/water_temperature.png" alt="Temperature">
-                        <h4>Water temperature</h4>
+                        <h4>Veden Lämpötila</h4>
                         <p> {{ temp }} °C</p>
                         <a href="{{ url_for('tempdetails') }}"><button>Details</button></a>
                     </div>
+
                     <div class="info-card">
                         <img src="static/media/water_temperature.png" alt="pH level">
-                        <h4>Water pH level</h4>
+                        <h4>Veden ph-taso</h4>
                         <p> {{ pH }} </p>
-                        <a href="{{ url_for('phdetails') }}"><button>Details</button></a>
+                        <a href="{{ url_for('phdetails') }}"><button>Lisätietoa</button></a>
                     </div>
+
                     <div class="info-card">
                         <img src="static/media/water_temperature.png" alt="Total Dissolved Solids">
-                        <h4>Total dissolved solids</h4>
+                        <h4>Liuenneiden aineiden kokonaismäärä</h4>
                         <p> {{ tds }} </p>
-                       <a href="{{ url_for('tdsdetails') }}"><button>Details</button></a>
+                       <a href="{{ url_for('tdsdetails') }}"><button>Lisätietoa</button></a>
                     </div>
+
                     <div class="info-card">
                         <img src="static/media/Blue-green_Algae.png" alt="Blue-green algae">
-                        <h4>blue-green algae</h4>
-                        <p>NO ALGAE DETECTED</p>
-                        <button>Details</button>
+                        <h4>Sinilevä</h4>
+                        <p>EI SINILEVÄÄ</p>
+                        <button>Lisätietoa</button>
                     </div>
+
                     <div class="info-card">
-                        <img src="static/media/water_level.png" alt="Water level">
-                        <h4>Water level</h4>
+                        <img src="static/media/water-level.png" alt="Water level">
+                        <h4>Vedenkorkeus</h4>
                         <p>812 m</p>
-                        <button>Details</button>
+                        <button>Lisätietoa</button>
                     </div>
                     <div class="info-card">
-                        <img src="static/media/Water_Clarity.png" alt="Water clarity">
-                        <h4>Water clarity</h4>
-                        <p>4 FTU (Depth 2.9m)</p>
-                        <button>Details</button>
+                        <img src="static/media/Water-Clarity.png" alt="Water clarity">
+                        <h4>Vedenkirkkaus</h4>
+                        <p>4 FTU (NÄKÖSYVYYS 2.9m)</p>
+                        <button>Lisätietoa</button>
                     </div>
                 </div>
 
                 <div class="nutrient-info">
-                    <h3>Water nutrient level</h3>
+                    <h3>Veden Ravinnepitoisuudet</h3>
                     <div class="nutrient-grid">
                         <div class="info-card">
-                            <h4>Total nitrogen</h4>
+                            <h4>Kokonaistyppi</h4>
                             <img src="static/media/no2.png" alt="Nitrogen Dioxide">
                             <p>390 μg/l</p>
-                            <button>Details</button>
+                            <button>Lisätietoa</button>
                         </div>
                         <div class="info-card">
-                            <h4>Total phosphorus</h4>
+                            <h4>Kokonaisfosfori</h4>
                             <img src="static/media/po4.png" alt="Phosphate">
                             <p>10 μg/l</p>
-                            <button>Details</button>
+                            <button>Lisätietoa</button>
                         </div>
                     </div>
                 </div>

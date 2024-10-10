@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="graph" style="width: 100%; height: 500px;"></div>
+    
+    <script>
+        // Get data from Flask variables
+        const timestamps = {{ timestamps | tojson }};
+        const tds = {{ tds | tojson }};
+        
+        // Create the Plotly graph
+        const trace = {
+            x: timestamps,
+            y: tds,
+            type: 'scatter',  // or 'bar' for bar chart
+            mode: 'lines+markers',  // Line with markers
+            name: 'Total Dissolved Solids',
+
+        };
+        
+        const data = [trace];
+        
+        const layout = {
+            title: 'Total Dissolved Solids Over Time',
+            xaxis: {
+                title: 'Timestamp',
+                tickangle: -45,
+                automargin: true,
+            },
+            yaxis: {
+                title: 'Total Dissolved Solids',
+            }
+        };
+        
+        Plotly.newPlot('graph', data, layout);
+    </script>
+</body>
+</html>

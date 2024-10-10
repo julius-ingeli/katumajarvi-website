@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="graph" style="width: 100%; height: 500px;"></div>
+    
+    <script>
+        // Get data from Flask variables
+        const timestamps = {{ timestamps | tojson }};
+        const temperatures = {{ temperatures | tojson }};
+        
+        // Create the Plotly graph
+        const trace = {
+            x: timestamps,
+            y: temperatures,
+            type: 'scatter',  // or 'bar' for bar chart
+            mode: 'lines+markers',  // Line with markers
+            name: 'Temperature',
+            line: {
+                color: 'red'  // Set the line color to red
+            },
+            marker: {
+                color: 'red'  // Set the marker color to red
+            }
+        };
+        
+        const data = [trace];
+        
+        const layout = {
+            title: 'Temperature Over Time',
+            xaxis: {
+                title: 'Timestamp',
+                tickangle: -45,
+                automargin: true,
+            },
+            yaxis: {
+                title: 'Temperature (°C)',
+            }
+        };
+        
+        Plotly.newPlot('graph', data, layout);
+    </script>
+</body>
+</html>
